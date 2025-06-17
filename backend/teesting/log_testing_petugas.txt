@@ -1,0 +1,58 @@
+
+=== REGISTER PETUGAS ===
+STATUS: 201
+RESPONSE: {
+  "message": "Registrasi berhasil",
+  "user": {
+    "_id": "68484608800e5cfa4f291b72",
+    "nama": "Petugas Test",
+    "email": "tespetugas1749566984@mail.com",
+    "peran": "petugas"
+  }
+}
+
+=== LOGIN PETUGAS ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDYwODgwMGU1Y2ZhNGYyOTFiNzIiLCJwZXJhbiI6InBldHVnYXMiLCJpYXQiOjE3NDk1NjY5ODQsImV4cCI6MTc1MDE3MTc4NH0.XZUzXeihhDcTrHrbJOADt349m6schaUY5XOsUJxos2Y",
+  "user": {
+    "_id": "68484608800e5cfa4f291b72",
+    "nama": "Petugas Test",
+    "email": "tespetugas1749566984@mail.com",
+    "peran": "petugas"
+  }
+}
+
+=== GET PROFILE ===
+STATUS: 200
+RESPONSE: {
+  "_id": "68484608800e5cfa4f291b72",
+  "nama": "Petugas Test",
+  "email": "tespetugas1749566984@mail.com",
+  "peran": "petugas",
+  "alamat": "",
+  "no_hp": "",
+  "foto": "",
+  "isVerified": false,
+  "createdAt": "2025-06-10T14:49:44.890Z",
+  "updatedAt": "2025-06-10T14:49:44.890Z",
+  "__v": 0
+}
+
+=== DASHBOARD PETUGAS ===
+STATUS: 200
+RESPONSE: {
+  "totalOrderHariIni": 0,
+  "unreadNotif": 0
+}
+
+=== LIST PICKUP VERIFICATION ===
+STATUS: 200
+RESPONSE: []
+
+=== NEGATIVE: DASHBOARD PETUGAS TANPA TOKEN ===
+STATUS: 401
+RESPONSE: {
+  "message": "Akses ditolak. Tidak ada token."
+}

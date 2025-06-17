@@ -1,0 +1,240 @@
+
+=== LOGIN PETANI ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDcxZjgwMGU1Y2ZhNGYyOTFjMWUiLCJwZXJhbiI6InBldGFuaSIsImlhdCI6MTc0OTU2NzI2MywiZXhwIjoxNzUwMTcyMDYzfQ.sNiGiWHKAla1DTl8klIcE75njmTYqzsnX0uOhajZkqI",
+  "user": {
+    "_id": "6848471f800e5cfa4f291c1e",
+    "nama": "Petani Test",
+    "email": "testpetani1749567263@mail.com",
+    "peran": "petani"
+  }
+}
+
+=== PETANI: TAMBAH PRODUK ===
+STATUS: 201
+RESPONSE: {
+  "message": "Produk berhasil ditambahkan, menunggu verifikasi admin",
+  "product": {
+    "nama": "Tomat E2E 1749567263",
+    "deskripsi": "Workflow automation",
+    "kategori": "sayur",
+    "harga": 5000,
+    "stok": 10,
+    "foto": "uploads\\umum\\1749567263521-966209253-foto_tomat.jpg",
+    "id_petani": "6848471f800e5cfa4f291c1e",
+    "status": "tunggu-verifikasi",
+    "isActive": true,
+    "_id": "6848471f800e5cfa4f291c21",
+    "createdAt": "2025-06-10T14:54:23.523Z",
+    "updatedAt": "2025-06-10T14:54:23.523Z",
+    "__v": 0
+  }
+}
+
+=== LOGIN ADMIN ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDcxZjgwMGU1Y2ZhNGYyOTFjMjQiLCJwZXJhbiI6ImFkbWluIiwiaWF0IjoxNzQ5NTY3MjYzLCJleHAiOjE3NTAxNzIwNjN9.2ZE38Evk51vNlyw8btuHrSz0LmUDJ_zqlMGgtQYE92k",
+  "user": {
+    "_id": "6848471f800e5cfa4f291c24",
+    "nama": "Admin Test",
+    "email": "testadmin1749567263@mail.com",
+    "peran": "admin"
+  }
+}
+
+=== ADMIN: APPROVE PRODUK ===
+STATUS: 200
+RESPONSE: {
+  "message": "Status produk diubah menjadi tersedia",
+  "product": {
+    "_id": "6848471f800e5cfa4f291c21",
+    "nama": "Tomat E2E 1749567263",
+    "deskripsi": "Workflow automation",
+    "kategori": "sayur",
+    "harga": 5000,
+    "stok": 10,
+    "foto": "uploads\\umum\\1749567263521-966209253-foto_tomat.jpg",
+    "id_petani": "6848471f800e5cfa4f291c1e",
+    "status": "tersedia",
+    "isActive": true,
+    "createdAt": "2025-06-10T14:54:23.523Z",
+    "updatedAt": "2025-06-10T14:54:23.647Z",
+    "__v": 0
+  }
+}
+
+=== ADMIN: TAMBAH PICKUP POINT ===
+STATUS: 201
+RESPONSE: {
+  "message": "Titik pengambilan berhasil ditambah",
+  "pickupPoint": {
+    "nama": "Point E2E",
+    "alamat": "Jl. E2E No. 1",
+    "jam_operasional": "07:00 - 15:00",
+    "kontak": "08001111222",
+    "status": "aktif",
+    "keterangan": "E2E",
+    "_id": "6848471f800e5cfa4f291c28",
+    "createdAt": "2025-06-10T14:54:23.653Z",
+    "updatedAt": "2025-06-10T14:54:23.653Z",
+    "__v": 0
+  }
+}
+
+=== LOGIN KONSUMEN ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDcxZjgwMGU1Y2ZhNGYyOTFjMmIiLCJwZXJhbiI6ImtvbnN1bWVuIiwiaWF0IjoxNzQ5NTY3MjYzLCJleHAiOjE3NTAxNzIwNjN9._R1bK0ZjvEh2JDB6vTk61rGusVce-s7DiKvjzIdwQkE",
+  "user": {
+    "_id": "6848471f800e5cfa4f291c2b",
+    "nama": "Konsumen Test",
+    "email": "testkonsumen1749567263@mail.com",
+    "peran": "konsumen"
+  }
+}
+
+=== KONSUMEN: ADD CART ===
+STATUS: 200
+RESPONSE: {
+  "message": "Cart berhasil diupdate",
+  "cart": {
+    "id_konsumen": "6848471f800e5cfa4f291c2b",
+    "items": [
+      {
+        "produk": "6848471f800e5cfa4f291c21",
+        "nama_produk": "Tomat E2E 1749567263",
+        "harga": 5000,
+        "jumlah": 2,
+        "subtotal": 10000,
+        "_id": "6848471f800e5cfa4f291c31"
+      }
+    ],
+    "total_harga": 10000,
+    "_id": "6848471f800e5cfa4f291c30",
+    "createdAt": "2025-06-10T14:54:23.779Z",
+    "updatedAt": "2025-06-10T14:54:23.779Z",
+    "__v": 0
+  }
+}
+
+=== KONSUMEN: UPDATE CART ===
+STATUS: 200
+RESPONSE: {
+  "message": "Cart berhasil diupdate",
+  "cart": {
+    "_id": "6848471f800e5cfa4f291c30",
+    "id_konsumen": "6848471f800e5cfa4f291c2b",
+    "items": [
+      {
+        "produk": "6848471f800e5cfa4f291c21",
+        "nama_produk": "Tomat E2E 1749567263",
+        "harga": 5000,
+        "jumlah": 5,
+        "subtotal": 25000,
+        "_id": "6848471f800e5cfa4f291c31"
+      }
+    ],
+    "total_harga": 25000,
+    "createdAt": "2025-06-10T14:54:23.779Z",
+    "updatedAt": "2025-06-10T14:54:23.786Z",
+    "__v": 0
+  }
+}
+
+=== KONSUMEN: GET CART ===
+STATUS: 200
+RESPONSE: {
+  "_id": "6848471f800e5cfa4f291c30",
+  "id_konsumen": "6848471f800e5cfa4f291c2b",
+  "items": [
+    {
+      "produk": "6848471f800e5cfa4f291c21",
+      "nama_produk": "Tomat E2E 1749567263",
+      "harga": 5000,
+      "jumlah": 5,
+      "subtotal": 25000,
+      "_id": "6848471f800e5cfa4f291c31"
+    }
+  ],
+  "total_harga": 25000,
+  "createdAt": "2025-06-10T14:54:23.779Z",
+  "updatedAt": "2025-06-10T14:54:23.786Z",
+  "__v": 0
+}
+
+=== KONSUMEN: CHECKOUT ===
+STATUS: 201
+RESPONSE: {
+  "message": "Checkout berhasil. Silakan lanjut pembayaran.",
+  "checkout": {
+    "id_konsumen": "6848471f800e5cfa4f291c2b",
+    "cart_items": [
+      {
+        "produk": "6848471f800e5cfa4f291c21",
+        "nama_produk": "Tomat E2E 1749567263",
+        "harga": 5000,
+        "jumlah": 5,
+        "subtotal": 25000,
+        "_id": "6848471f800e5cfa4f291c31"
+      }
+    ],
+    "total_harga": 25000,
+    "id_titik_ambil": "6848471f800e5cfa4f291c28",
+    "alamat_pengiriman": "Jl. Konsumen",
+    "no_hp": "0812000111",
+    "metode_pembayaran": "transfer",
+    "bukti_pembayaran": "",
+    "status_checkout": "pending",
+    "catatan": "Checkout E2E",
+    "_id": "6848471f800e5cfa4f291c3c",
+    "createdAt": "2025-06-10T14:54:23.801Z",
+    "updatedAt": "2025-06-10T14:54:23.801Z",
+    "__v": 0
+  }
+}
+
+=== ADMIN: GET ALL ORDERS ===
+STATUS: 200
+RESPONSE: []
+
+=== ADMIN: APPROVE CHECKOUT (BAYAR) ===
+STATUS: 500
+RESPONSE: {
+  "message": "Cast to ObjectId failed for value \"None\" (type string) at path \"_id\" for model \"Checkout\""
+}
+
+=== ADMIN: ADD LOGISTICS ===
+STATUS: 404
+RESPONSE: {
+  "message": "Order tidak ditemukan"
+}
+
+=== LOGIN PETUGAS ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDcxZjgwMGU1Y2ZhNGYyOTFjNDIiLCJwZXJhbiI6InBldHVnYXMiLCJpYXQiOjE3NDk1NjcyNjMsImV4cCI6MTc1MDE3MjA2M30.KDt4N3aqKKNvjTDIq7b6KjkhQkRdwyhIxjtLpiMv-j8",
+  "user": {
+    "_id": "6848471f800e5cfa4f291c42",
+    "nama": "Petugas Test",
+    "email": "testpetugas1749567263@mail.com",
+    "peran": "petugas"
+  }
+}
+
+=== PETUGAS: PICKUP VERIFICATION ===
+STATUS: 404
+RESPONSE: {
+  "message": "Order tidak ditemukan"
+}
+
+=== KONSUMEN: DELETE PROFILE ===
+STATUS: 403
+RESPONSE: {
+  "message": "Akses ditolak (bukan role yang diizinkan)."
+}

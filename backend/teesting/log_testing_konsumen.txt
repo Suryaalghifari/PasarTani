@@ -1,0 +1,80 @@
+
+=== REGISTER KONSUMEN ===
+STATUS: 201
+RESPONSE: {
+  "message": "Registrasi berhasil",
+  "user": {
+    "_id": "684843b6800e5cfa4f291b3f",
+    "nama": "Konsumen Test",
+    "email": "teskonsumen1749566390721@mail.com",
+    "peran": "konsumen"
+  }
+}
+
+=== LOGIN KONSUMEN ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDNiNjgwMGU1Y2ZhNGYyOTFiM2YiLCJwZXJhbiI6ImtvbnN1bWVuIiwiaWF0IjoxNzQ5NTY2MzkwLCJleHAiOjE3NTAxNzExOTB9.SpFWHwcCj89gzXo2nyM_jd1gjqfpTjYybWY0Jd1QsZM",
+  "user": {
+    "_id": "684843b6800e5cfa4f291b3f",
+    "nama": "Konsumen Test",
+    "email": "teskonsumen1749566390721@mail.com",
+    "peran": "konsumen"
+  }
+}
+
+=== GET PROFILE ===
+STATUS: 200
+RESPONSE: {
+  "_id": "684843b6800e5cfa4f291b3f",
+  "nama": "Konsumen Test",
+  "email": "teskonsumen1749566390721@mail.com",
+  "peran": "konsumen",
+  "alamat": "",
+  "no_hp": "",
+  "foto": "",
+  "isVerified": false,
+  "createdAt": "2025-06-10T14:39:50.787Z",
+  "updatedAt": "2025-06-10T14:39:50.787Z",
+  "__v": 0
+}
+
+=== UPDATE PROFILE ===
+STATUS: 200
+RESPONSE: {
+  "message": "Profile berhasil diupdate",
+  "user": {
+    "_id": "684843b6800e5cfa4f291b3f",
+    "nama": "Konsumen Diupdate",
+    "email": "teskonsumen1749566390721@mail.com",
+    "peran": "konsumen",
+    "alamat": "Jl. Update",
+    "no_hp": "085712345678",
+    "foto": "",
+    "isVerified": false,
+    "createdAt": "2025-06-10T14:39:50.787Z",
+    "updatedAt": "2025-06-10T14:39:50.866Z",
+    "__v": 0
+  }
+}
+
+=== LIST PRODUCTS ===
+STATUS: 200
+RESPONSE: []
+
+=== NOTIFIKASI SAYA ===
+STATUS: 200
+RESPONSE: []
+
+=== NEGATIVE: TANPA TOKEN ===
+STATUS: 401
+RESPONSE: {
+  "message": "Akses ditolak. Tidak ada token."
+}
+
+=== NEGATIVE: CART INPUT SALAH ===
+STATUS: 500
+RESPONSE: {
+  "message": "Cast to ObjectId failed for value \"\" (type string) at path \"_id\" for model \"Product\""
+}

@@ -1,0 +1,134 @@
+
+=== REGISTER ADMIN ===
+STATUS: 201
+RESPONSE: {
+  "message": "Registrasi berhasil",
+  "user": {
+    "_id": "6848456c800e5cfa4f291b59",
+    "nama": "Admin Test",
+    "email": "tesadmin1749566828@mail.com",
+    "peran": "admin"
+  }
+}
+
+=== LOGIN ADMIN ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDU2YzgwMGU1Y2ZhNGYyOTFiNTkiLCJwZXJhbiI6ImFkbWluIiwiaWF0IjoxNzQ5NTY2ODI4LCJleHAiOjE3NTAxNzE2Mjh9.MP4lX1DGe1EM_INWIj4bPKPC2Gw-mmYQILB9nTi1eGY",
+  "user": {
+    "_id": "6848456c800e5cfa4f291b59",
+    "nama": "Admin Test",
+    "email": "tesadmin1749566828@mail.com",
+    "peran": "admin"
+  }
+}
+
+=== GET ALL USERS ===
+STATUS: 200
+RESPONSE: [{'_id': '68483fa62a7a18d8ac3d78be', 'nama': 'Test User', 'email': 'testuser123@mail.com', 'peran': 'konsumen', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:22:30.117Z', 'updatedAt': '2025-06-10T14:22:30.117Z', '__v': 0}, {'_id': '684840bb2a7a18d8ac3d78c2', 'nama': 'Petani Satu', 'email': 'petani1@mail.com', 'peran': 'petani', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:27:07.434Z', 'updatedAt': '2025-06-10T14:27:07.434Z', '__v': 0}, {'_id': '684842a9800e5cfa4f291b05', 'nama': 'Konsumen Automation', 'email': 'teskonsumen1749566121217@mail.com', 'peran': 'konsumen', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:35:21.316Z', 'updatedAt': '2025-06-10T14:35:21.316Z', '__v': 0}, {'_id': '684842a9800e5cfa4f291b09', 'nama': 'Petani Automation', 'email': 'tespetani1749566121390@mail.com', 'peran': 'petani', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:35:21.450Z', 'updatedAt': '2025-06-10T14:35:21.450Z', '__v': 0}, {'_id': '684842cb800e5cfa4f291b0f', 'nama': 'Konsumen Automation', 'email': 'teskonsumen1749566155643@mail.com', 'peran': 'konsumen', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:35:55.706Z', 'updatedAt': '2025-06-10T14:35:55.706Z', '__v': 0}, {'_id': '684842cb800e5cfa4f291b13', 'nama': 'Petani Automation', 'email': 'tespetani1749566155768@mail.com', 'peran': 'petani', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:35:55.827Z', 'updatedAt': '2025-06-10T14:35:55.827Z', '__v': 0}, {'_id': '684842d5800e5cfa4f291b27', 'nama': 'Konsumen Automation', 'email': 'teskonsumen1749566165162@mail.com', 'peran': 'konsumen', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:36:05.224Z', 'updatedAt': '2025-06-10T14:36:05.224Z', '__v': 0}, {'_id': '684842d5800e5cfa4f291b2b', 'nama': 'Petani Automation', 'email': 'tespetani1749566165292@mail.com', 'peran': 'petani', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:36:05.352Z', 'updatedAt': '2025-06-10T14:36:05.352Z', '__v': 0}, {'_id': '684843b6800e5cfa4f291b3f', 'nama': 'Konsumen Diupdate', 'email': 'teskonsumen1749566390721@mail.com', 'peran': 'konsumen', 'alamat': 'Jl. Update', 'no_hp': '085712345678', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:39:50.787Z', 'updatedAt': '2025-06-10T14:39:50.866Z', '__v': 0}, {'_id': '68484477800e5cfa4f291b47', 'nama': 'Petani Diupdate', 'email': 'tespetani1749566583@mail.com', 'peran': 'petani', 'alamat': 'Jl. Ladang 12', 'no_hp': '081234567890', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:43:03.653Z', 'updatedAt': '2025-06-10T14:43:03.727Z', '__v': 0}, {'_id': '6848456c800e5cfa4f291b59', 'nama': 'Admin Test', 'email': 'tesadmin1749566828@mail.com', 'peran': 'admin', 'alamat': '', 'no_hp': '', 'foto': '', 'isVerified': False, 'createdAt': '2025-06-10T14:47:08.628Z', 'updatedAt': '2025-06-10T14:47:08.628Z', '__v': 0}]
+
+=== GET ALL PRODUCTS ===
+STATUS: 200
+RESPONSE: []
+
+=== TAMBAH PICKUP POINT ===
+STATUS: 201
+RESPONSE: {
+  "message": "Titik pengambilan berhasil ditambah",
+  "pickupPoint": {
+    "nama": "Gudang Tani Admin",
+    "alamat": "Jl. Admin No. 8",
+    "jam_operasional": "08:00 - 17:00",
+    "kontak": "0899112233",
+    "status": "aktif",
+    "keterangan": "Gudang Pusat",
+    "_id": "6848456c800e5cfa4f291b5e",
+    "createdAt": "2025-06-10T14:47:08.702Z",
+    "updatedAt": "2025-06-10T14:47:08.702Z",
+    "__v": 0
+  }
+}
+
+=== LIST PICKUP POINT ===
+STATUS: 200
+RESPONSE: [{'_id': '6848456c800e5cfa4f291b5e', 'nama': 'Gudang Tani Admin', 'alamat': 'Jl. Admin No. 8', 'jam_operasional': '08:00 - 17:00', 'kontak': '0899112233', 'status': 'aktif', 'keterangan': 'Gudang Pusat', 'createdAt': '2025-06-10T14:47:08.702Z', 'updatedAt': '2025-06-10T14:47:08.702Z', '__v': 0}]
+
+=== UPDATE PICKUP POINT ===
+STATUS: 200
+RESPONSE: {
+  "message": "Titik pengambilan berhasil diupdate",
+  "pickupPoint": {
+    "_id": "6848456c800e5cfa4f291b5e",
+    "nama": "Gudang Tani Edit",
+    "alamat": "Jl. Admin Baru",
+    "jam_operasional": "07:00 - 16:00",
+    "kontak": "0899000111",
+    "status": "aktif",
+    "keterangan": "Edit Gudang",
+    "createdAt": "2025-06-10T14:47:08.702Z",
+    "updatedAt": "2025-06-10T14:47:08.711Z",
+    "__v": 0
+  }
+}
+
+=== DELETE PICKUP POINT ===
+STATUS: 200
+RESPONSE: {
+  "message": "Titik pengambilan berhasil dihapus"
+}
+
+=== GET ALL ORDERS ===
+STATUS: 200
+RESPONSE: []
+
+=== LIST PAYMENTS ===
+STATUS: 200
+RESPONSE: []
+
+=== GENERATE SALES REPORT ===
+STATUS: 200
+RESPONSE: {
+  "message": "Laporan penjualan berhasil dibuat",
+  "report": {
+    "jenis": "penjualan",
+    "periode": "2024-01-01 - 2024-12-31",
+    "dibuat_oleh": "6848456c800e5cfa4f291b59",
+    "data": {
+      "orders": []
+    },
+    "total_transaksi": 0,
+    "total_produk": 0,
+    "total_pendapatan": 0,
+    "catatan": "",
+    "_id": "6848456c800e5cfa4f291b66",
+    "createdAt": "2025-06-10T14:47:08.732Z",
+    "updatedAt": "2025-06-10T14:47:08.732Z",
+    "__v": 0
+  }
+}
+
+=== DASHBOARD ADMIN ===
+STATUS: 200
+RESPONSE: {
+  "totalUsers": 11,
+  "totalPetani": 5,
+  "totalKonsumen": 5,
+  "totalProduk": 2,
+  "totalOrder": 0,
+  "totalPickupPoint": 0,
+  "totalPendapatan": 0,
+  "unreadNotif": 0
+}
+
+=== NEGATIVE: GET USERS TANPA TOKEN ===
+STATUS: 401
+RESPONSE: {
+  "message": "Akses ditolak. Tidak ada token."
+}
+
+=== NEGATIVE: ADD PICKUP POINT SALAH ===
+STATUS: 500
+RESPONSE: {
+  "message": "PickupPoint validation failed: nama: Nama titik pengambilan wajib diisi, alamat: Alamat titik pengambilan wajib diisi, jam_operasional: Jam operasional wajib diisi"
+}

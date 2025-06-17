@@ -1,0 +1,141 @@
+
+=== REGISTER PETANI ===
+STATUS: 201
+RESPONSE: {
+  "message": "Registrasi berhasil",
+  "user": {
+    "_id": "68484477800e5cfa4f291b47",
+    "nama": "Petani Test",
+    "email": "tespetani1749566583@mail.com",
+    "peran": "petani"
+  }
+}
+
+=== LOGIN PETANI ===
+STATUS: 200
+RESPONSE: {
+  "message": "Login berhasil",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODQ4NDQ3NzgwMGU1Y2ZhNGYyOTFiNDciLCJwZXJhbiI6InBldGFuaSIsImlhdCI6MTc0OTU2NjU4MywiZXhwIjoxNzUwMTcxMzgzfQ.5QEPxQjUtXd54bF_a9MEO4xlxceZ10-1qf6qoliTq6k",
+  "user": {
+    "_id": "68484477800e5cfa4f291b47",
+    "nama": "Petani Test",
+    "email": "tespetani1749566583@mail.com",
+    "peran": "petani"
+  }
+}
+
+=== GET PROFILE ===
+STATUS: 200
+RESPONSE: {
+  "_id": "68484477800e5cfa4f291b47",
+  "nama": "Petani Test",
+  "email": "tespetani1749566583@mail.com",
+  "peran": "petani",
+  "alamat": "",
+  "no_hp": "",
+  "foto": "",
+  "isVerified": false,
+  "createdAt": "2025-06-10T14:43:03.653Z",
+  "updatedAt": "2025-06-10T14:43:03.653Z",
+  "__v": 0
+}
+
+=== UPDATE PROFILE ===
+STATUS: 200
+RESPONSE: {
+  "message": "Profile berhasil diupdate",
+  "user": {
+    "_id": "68484477800e5cfa4f291b47",
+    "nama": "Petani Diupdate",
+    "email": "tespetani1749566583@mail.com",
+    "peran": "petani",
+    "alamat": "Jl. Ladang 12",
+    "no_hp": "081234567890",
+    "foto": "",
+    "isVerified": false,
+    "createdAt": "2025-06-10T14:43:03.653Z",
+    "updatedAt": "2025-06-10T14:43:03.727Z",
+    "__v": 0
+  }
+}
+
+=== TAMBAH PRODUK ===
+STATUS: 201
+RESPONSE: {
+  "message": "Produk berhasil ditambahkan, menunggu verifikasi admin",
+  "product": {
+    "nama": "Tomat Test 1749566583",
+    "deskripsi": "Tomat segar automation",
+    "kategori": "sayur",
+    "harga": 12000,
+    "stok": 25,
+    "foto": "uploads\\umum\\1749566583734-124216972-foto_tomat.jpg",
+    "id_petani": "68484477800e5cfa4f291b47",
+    "status": "tunggu-verifikasi",
+    "isActive": true,
+    "_id": "68484477800e5cfa4f291b4c",
+    "createdAt": "2025-06-10T14:43:03.735Z",
+    "updatedAt": "2025-06-10T14:43:03.735Z",
+    "__v": 0
+  }
+}
+
+=== MY PRODUCTS ===
+STATUS: 200
+RESPONSE: [{'_id': '68484477800e5cfa4f291b4c', 'nama': 'Tomat Test 1749566583', 'deskripsi': 'Tomat segar automation', 'kategori': 'sayur', 'harga': 12000, 'stok': 25, 'foto': 'uploads\\umum\\1749566583734-124216972-foto_tomat.jpg', 'id_petani': '68484477800e5cfa4f291b47', 'status': 'tunggu-verifikasi', 'isActive': True, 'createdAt': '2025-06-10T14:43:03.735Z', 'updatedAt': '2025-06-10T14:43:03.735Z', '__v': 0}]
+
+=== UPDATE PRODUK ===
+STATUS: 200
+RESPONSE: {
+  "message": "Produk berhasil diupdate",
+  "product": {
+    "_id": "68484477800e5cfa4f291b4c",
+    "nama": "Tomat Edit Automation",
+    "deskripsi": "Edit deskripsi produk",
+    "kategori": "sayur",
+    "harga": 10000,
+    "stok": 100,
+    "foto": "uploads\\umum\\1749566583734-124216972-foto_tomat.jpg",
+    "id_petani": "68484477800e5cfa4f291b47",
+    "status": "tunggu-verifikasi",
+    "isActive": true,
+    "createdAt": "2025-06-10T14:43:03.735Z",
+    "updatedAt": "2025-06-10T14:43:03.749Z",
+    "__v": 0
+  }
+}
+
+=== MY PRODUCTS ===
+STATUS: 200
+RESPONSE: [{'_id': '68484477800e5cfa4f291b4c', 'nama': 'Tomat Edit Automation', 'deskripsi': 'Edit deskripsi produk', 'kategori': 'sayur', 'harga': 10000, 'stok': 100, 'foto': 'uploads\\umum\\1749566583734-124216972-foto_tomat.jpg', 'id_petani': '68484477800e5cfa4f291b47', 'status': 'tunggu-verifikasi', 'isActive': True, 'createdAt': '2025-06-10T14:43:03.735Z', 'updatedAt': '2025-06-10T14:43:03.749Z', '__v': 0}]
+
+=== DELETE PRODUK ===
+STATUS: 200
+RESPONSE: {
+  "message": "Produk berhasil dihapus"
+}
+
+=== MY PRODUCTS ===
+STATUS: 200
+RESPONSE: []
+
+=== DASHBOARD PETANI ===
+STATUS: 200
+RESPONSE: {
+  "totalProdukSaya": 0,
+  "totalOrderProdukSaya": 0,
+  "totalPendapatan": 0,
+  "unreadNotif": 0
+}
+
+=== NEGATIVE: MY PRODUCTS TANPA TOKEN ===
+STATUS: 401
+RESPONSE: {
+  "message": "Akses ditolak. Tidak ada token."
+}
+
+=== NEGATIVE: ADD PRODUK SALAH ===
+STATUS: 400
+RESPONSE: {
+  "message": "Foto produk wajib di-upload"
+}
