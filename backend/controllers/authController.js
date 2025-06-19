@@ -68,15 +68,11 @@ exports.login = async (req, res) => {
       expiresIn: "7d",
     });
 
+    const freshUser = await User.findById(user._id).select("-password");
     res.status(200).json({
       message: "Login berhasil",
       token,
-      user: {
-        _id: user._id,
-        nama: user.nama,
-        email: user.email,
-        peran: user.peran,
-      },
+      user: freshUser, // Kirim user lengkap!
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

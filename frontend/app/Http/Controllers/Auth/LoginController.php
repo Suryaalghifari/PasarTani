@@ -19,12 +19,13 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|string',
         ]);
-    
+
         $response = Http::post('http://localhost:5000/api/auth/login', [
             'email' => $request->email,
             'password' => $request->password,
         ]);
-    
+        
+
         if ($response->successful()) {
             $data = $response->json();
             session([
@@ -32,22 +33,24 @@ class LoginController extends Controller
                 'user' => $data['user'],
             ]);
             $role = $data['user']['peran'] ?? $data['user']['role'] ?? null;
-    
-            // Debug sementara:
-            // dd($role, session()->all());
-    
+
+            // Langsung handle redirect sesuai role:
             if ($role === 'admin') {
                 return redirect()->route('admin.dashboard');
             } elseif ($role === 'petani') {
                 return redirect()->route('petani.dashboard');
+            } elseif ($role === 'petugas') {
+                return redirect()->route('petugas.dashboard');   
             } else {
-                return redirect('/home');
+                // pelanggan, user biasa, ke landing/home
+                return redirect()->route('home');
             }
         } else {
             $errorMessage = $response->json('message') ?? 'Login gagal';
             return back()->withErrors(['error' => $errorMessage])->withInput();
         }
     }
+
 
     public function logout(Request $request)
     {

@@ -126,7 +126,6 @@
                         <div class="select-group">
                             <select id="peran" name="peran" class="form-select @error('peran') error @enderror">
                                 <option value="">Pilih Peran Anda</option>
-                                <option value="admin" {{ old('peran') == 'admin' ? 'selected' : '' }}>👨‍💼 Admin</option>
                                 <option value="petani" {{ old('peran') == 'petani' ? 'selected' : '' }}>🌾 Petani</option>
                                 <option value="konsumen" {{ old('peran') == 'konsumen' ? 'selected' : '' }}>🛒 Konsumen</option>
                                 <option value="petugas" {{ old('peran') == 'petugas' ? 'selected' : '' }}>👷‍♂️ Petugas</option>

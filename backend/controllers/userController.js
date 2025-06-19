@@ -11,6 +11,74 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+// Tambah user baru (admin)
+// Tambah user baru oleh admin
+exports.createUserByAdmin = async (req, res) => {
+  try {
+    const { nama, email, password, peran, alamat, no_hp } = req.body;
+
+    if (!nama || !email || !password || !peran) {
+      return res.status(400).json({ message: "Field wajib belum diisi!" });
+    }
+
+    const userExist = await User.findOne({ email });
+    if (userExist) {
+      return res.status(400).json({ message: "Email sudah terdaftar" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      nama,
+      email,
+      password: hashedPassword,
+      peran,
+      alamat,
+      no_hp,
+      foto: req.file ? `${peran}/${req.file.filename}` : undefined,
+    });
+
+    await newUser.save();
+
+    // Kirim user tanpa password ke frontend
+    const userNoPass = await User.findById(newUser._id).select("-password");
+    res
+      .status(201)
+      .json({ message: "User berhasil ditambahkan", user: userNoPass });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.updateUserByAdmin = async (req, res) => {
+  try {
+    const { nama, email, peran, alamat, no_hp, password } = req.body;
+    const updateData = { nama, email, peran, alamat, no_hp };
+
+    if (req.file) {
+      updateData.foto = `${peran}/${req.file.filename}`;
+    }
+
+    if (password && password.length > 5) {
+      updateData.password = await bcrypt.hash(password, 10);
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      { $set: updateData },
+      { new: true, runValidators: true }
+    ).select("-password");
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User tidak ditemukan" });
+    }
+
+    res.json({ message: "User berhasil diupdate", user: updatedUser });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // Get detail user by id (admin atau user sendiri)
 exports.getUserById = async (req, res) => {
   try {

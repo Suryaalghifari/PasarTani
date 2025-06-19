@@ -17,7 +17,7 @@
       </div>
       <ul class="navbar-nav d-flex align-items-center justify-content-end">
         <li class="nav-item d-flex align-items-center me-3">
-          <a class="btn btn-outline-primary btn-sm mb-0" href="#">Kademangan</a>
+          <a class="btn btn-outline-primary btn-sm mb-0" href="#">Tani</a>
         </li>
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
           <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">

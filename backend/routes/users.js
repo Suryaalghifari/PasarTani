@@ -27,7 +27,31 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage: storage });
+router.post(
+  "/",
+  auth,
+  role(["admin"]),
+  upload.single("foto"),
+  userController.createUserByAdmin
+);
 
+router.put(
+  "/:id",
+  auth,
+  role(["admin"]),
+  upload.single("foto"),
+  userController.updateUserByAdmin
+);
+exports.deleteUser = async (req, res) => {
+  try {
+    const deleted = await User.findByIdAndDelete(req.params.id);
+    if (!deleted)
+      return res.status(404).json({ message: "User tidak ditemukan" });
+    res.json({ message: "User berhasil dihapus" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 // Semua user (admin only)
 router.get("/", auth, role(["admin"]), userController.getAllUsers);
 
