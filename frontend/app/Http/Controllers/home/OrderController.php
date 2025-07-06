@@ -23,9 +23,9 @@ class OrderController extends Controller
         $checkoutsRes = Http::withToken($token)->get('http://localhost:5000/api/checkout/me');
         if ($checkoutsRes->ok()) {
             $checkouts = collect($checkoutsRes->json())
-                ->whereIn('status_checkout', ['pending', 'menunggu-verifikasi']) // filter yang belum jadi order
-                ->values()->all();
-        }
+                ->whereIn('status_checkout', ['pending', 'menunggu-verifikasi', 'gagal', 'berhasil']) // tambahkan 'gagal'
+                ->values()->all();;
+        }   
     }
 
     // Gabungkan kedua data, urutkan berdasarkan tanggal (createdAt)

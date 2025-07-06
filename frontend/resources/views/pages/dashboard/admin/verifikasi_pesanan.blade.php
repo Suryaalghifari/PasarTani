@@ -54,13 +54,20 @@
                   </span>
                 </td>
                 <td>
-                  @if($checkout['bukti_pembayaran'])
-                    <a href="{{ asset($checkout['bukti_pembayaran']) }}" target="_blank" class="badge badge-sm bg-gradient-info text-white" title="Lihat Bukti">
-                      <i class="fas fa-receipt"></i> Lihat
+                @php
+                    $bukti = $checkout['bukti_pembayaran'] ?? '';
+                    $bukti = str_replace('\\', '/', $bukti);
+                    $bukti = preg_replace('/^uploads\//', '', $bukti);
+                    $buktiUrl = $bukti ? 'http://localhost:5000/uploads/' . $bukti : null;
+                @endphp
+
+                 @if($buktiUrl)
+                    <a href="{{ $buktiUrl }}" target="_blank" title="Lihat Bukti">
+                        <img src="{{ $buktiUrl }}" alt="Bukti" style="max-width: 60px; max-height: 60px; border-radius: 4px;">
                     </a>
-                  @else
+                @else
                     <span class="badge badge-sm bg-gradient-danger">Belum upload</span>
-                  @endif
+                @endif
                 </td>
                 <td class="align-middle text-center">
                   <form action="{{ route('admin.verifikasi_pesanan.aksi', $checkout['_id']) }}" method="POST" style="display:inline;">
