@@ -10,7 +10,7 @@
 | ---------- | ------------------------------------------- |
 | Frontend   | Laravel (Blade + Bootstrap)                 |
 | Backend    | Express.js (Node.js API)                    |
-| Database   | MySQL / MariaDB                             |
+| Database   | MongoDB                                     |
 | Komunikasi | REST API                                    |
 | Deployment | Bebas disesuaikan (XAMPP, Vercel, VPS, dkk) |
 
